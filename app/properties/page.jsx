@@ -1,6 +1,5 @@
-import React from 'react';
-
-const PropertiesPage = () => {
+'use client';
+const PropertyPage = () => {
     return (
         <div>
             Properties Page
@@ -8,4 +7,4 @@ const PropertiesPage = () => {
     );
 };
 
-export default PropertiesPage;
+export default PropertyPage;
