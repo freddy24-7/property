@@ -3,12 +3,11 @@ import { fetchProperties } from "@/utils/requests";
 
 const PropertiesPage = async () => {
 
-    const properties = await fetchProperties();
+    const data = await fetchProperties();
 
-    //sort properties by data
-    properties.sort((a, b) => {
-        return new Date(b.createdAt) - new Date(a.createdAt);
-    });
+    const properties = data.properties
+        .sort(() => Math.random() - Math.random())
+        .slice(0, 3);
 
     return (
         <section className="px-4 py-6">
