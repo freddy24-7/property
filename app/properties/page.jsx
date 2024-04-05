@@ -1,4 +1,5 @@
 import PropertySearchForm from '@/components/PropertySearchForm';
+import Properties from '@/components/Properties';
 
 const PropertiesPage = async () => {
   return (
@@ -8,6 +9,7 @@ const PropertiesPage = async () => {
           <PropertySearchForm />
         </div>
       </section>
+      <Properties />
     </>
   );
 };

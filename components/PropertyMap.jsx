@@ -30,7 +30,7 @@ const PropertyMap = ({ property }) => {
     const fetchCoords = async () => {
       try {
         const res = await fromAddress(
-            `${property.location.street} ${property.location.city} ${property.location.state} ${property.location.zipcode}`
+          `${property.location.street} ${property.location.city} ${property.location.state} ${property.location.zipcode}`
         );
 
         //  Check for results
@@ -70,23 +70,23 @@ const PropertyMap = ({ property }) => {
   }
 
   return (
-      !loading && (
-          <Map
-              mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
-              mapLib={import('mapbox-gl')}
-              initialViewState={{
-                longitude: lng,
-                latitude: lat,
-                zoom: 15,
-              }}
-              style={{ width: '100%', height: 500 }}
-              mapStyle='mapbox://styles/mapbox/streets-v9'
-          >
-            <Marker longitude={lng} latitude={lat} anchor='bottom'>
-              <Image src={pin} alt='location' width={40} height={40} />
-            </Marker>
-          </Map>
-      )
+    !loading && (
+      <Map
+        mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
+        mapLib={import('mapbox-gl')}
+        initialViewState={{
+          longitude: lng,
+          latitude: lat,
+          zoom: 15,
+        }}
+        style={{ width: '100%', height: 500 }}
+        mapStyle='mapbox://styles/mapbox/streets-v9'
+      >
+        <Marker longitude={lng} latitude={lat} anchor='bottom'>
+          <Image src={pin} alt='location' width={40} height={40} />
+        </Marker>
+      </Map>
+    )
   );
 };
 export default PropertyMap;
